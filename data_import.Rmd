@@ -8,3 +8,29 @@ library(tidyverse)
 ```
 
 This document will show how to import data. 
+
+## Import the FAS Litters CVS 
+
+(janitor: replace spaces with underscores, changed to lowercase (comm shift I for r chunk))
+
+(instead of using whole library, just used clean name function from janitor package/library)
+```{r}
+litters_df = read_csv("data/FAS_litters.csv")
+
+litters_df = janitor::clean_names(litters_df)
+```
+
+## Look at the dataset 
+(tail, but last 10 entries)
+```{r}
+litters_df
+
+head(litters_df)
+tail(litters_df, 10)
+```
+
+```{r eval = FALSE}
+view(litters_df)
+```
+
+
